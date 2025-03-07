@@ -8,6 +8,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int count =0;
+
+  void increment(){
+    count++;
+  }
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -19,14 +25,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Text("You have pressed this button and this amount of time",style: TextStyle(fontSize: 16),),
-            SizedBox(height: 12,),  //for spacing
-            Text("15",style: TextStyle(fontSize: 35),),
+          children:  [
+           const Text("You have pressed this button and this amount of time2",style: TextStyle(fontSize: 16),),
+            const SizedBox(height: 12,),  //for spacing
+            Text(count.toString(),style: TextStyle(fontSize: 35),),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){},child: const Icon(Icons.add),),
+      floatingActionButton: FloatingActionButton(onPressed: increment,
+        child: const Icon(Icons.add),),
     );
   }
 }
