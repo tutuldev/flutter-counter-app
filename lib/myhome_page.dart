@@ -11,7 +11,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int count =0;
 
   void increment(){
-    count++;
+   setState(() {
+     count++;
+   });
   }
 
   @override
